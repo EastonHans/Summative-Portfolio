@@ -1,9 +1,11 @@
+
 /* ── CURSOR TRACKING ── */
 const dot = document.getElementById('cursor-dot');
 const ring = document.getElementById('cursor-ring');
 let mx = 0, my = 0;
 let rx = 0, ry = 0;
- 
+
+
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
   dot.style.left = mx + 'px';
@@ -72,7 +74,8 @@ document.querySelectorAll('a, button, .distort-card').forEach(el => {
  
 /* ── PER-CARD WAVE SIMULATION ── */
 function initCardWave(card) {
-  const canvas = card.querySelector('canvas');
+  const canvas = card.querySelector('.card-canvas');
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let W, H;
   let mouseX = 0.5, mouseY = 0.5;
