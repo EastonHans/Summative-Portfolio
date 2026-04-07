@@ -35,6 +35,19 @@ body {
     color: var(--white);
     line-height: 1.6;
     overflow-x: hidden;
+    cursor: none;
+}
+
+body.hovering #cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: white;
+}
+
+body.hovering #cursor-ring {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(37,99,235,0.9);
 }
 
 /* ============================================
@@ -162,6 +175,16 @@ nav {
     text-transform: uppercase;
     margin-bottom: 2.5rem;
     animation: fadeUp 0.8s ease both;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse, rgba(37,99,235,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  transition: transform 0.08s ease;
 }
 
 .hero-name {
@@ -462,6 +485,14 @@ nav {
 .project-card-body h3 em {
     font-style: italic;
     color: var(--blue-bright);
+}
+
+.project-card canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 .tech-stack {
@@ -792,4 +823,54 @@ footer {
     .skill-block {
         border-right: none;
     }
+}
+
+/* ── CURSOR ── */
+*, *::before, *::after { cursor: none; }
+
+#cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 10px; height: 10px;
+  background: #3b82f6;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+}
+
+#cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 40px; height: 40px;
+  border: 1.5px solid rgba(37,99,235,0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.35s ease, height 0.35s ease;
+}
+
+body.hovering #cursor-dot { width: 6px; height: 6px; background: white; }
+body.hovering #cursor-ring { width: 60px; height: 60px; border-color: rgba(37,99,235,0.9); }
+
+/* ── RIPPLE CANVAS ── */
+#ripple-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+
+/* ── CARD CANVAS ── */
+.card-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
 }

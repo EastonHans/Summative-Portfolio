@@ -13,6 +13,11 @@
 </head>
 <body>
 
+    <!-- Cursor & ripple elements (required for script.js) -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="ripple-canvas"></canvas>
+
     <!-- NAV -->
     <header>
         <nav>
@@ -34,6 +39,7 @@
 
         <!-- HERO -->
         <section class="hero">
+            <div class="hero-glow" id="hero-glow"></div>
             <div class="hero-eyebrow">Software Developer</div>
             <h1 class="hero-name">
                 <span class="hero-name-line">Easton</span>
@@ -117,6 +123,7 @@
                         <img src="JS Lab.png" alt="Calculator Project">
                         <div class="project-img-overlay"></div>
                     </div>
+                    <canvas class="card-canvas"></canvas>
                     <div class="project-card-body">
                         <p class="project-role">JavaScript Developer · Moringa School Lab</p>
                         <h3>Calculator<br>Application</h3>
@@ -140,6 +147,7 @@
                         <img src="24h.png" alt="24hr Story Feature">
                         <div class="project-img-overlay"></div>
                     </div>
+                    <canvas class="card-canvas"></canvas>
                     <div class="project-card-body">
                         <p class="project-role">Frontend Developer · Side Project</p>
                         <h3>24-hr Story<br><em>Feature</em></h3>
@@ -237,7 +245,7 @@
             <p class="footer-big">Always<br><em>building.</em></p>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copy">&copy; 2026 Easton Hans. All rights reserved.</p>
+            <p class="footer-copy">&copy; <span id="current-year"></span> Easton Hans. All rights reserved.</p>
             <div class="social-links">
                 <a href="https://github.com/EastonHans" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="ri-github-fill"></i></a>
                 <a href="https://www.linkedin.com/in/easton-hans-70408625a" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
@@ -246,6 +254,6 @@
             <p class="footer-role">Software Developer · Django · Python · ML</p>
         </div>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
